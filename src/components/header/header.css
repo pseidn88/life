@@ -140,10 +140,17 @@ h1,.banner-content {
 }
 
 .banner-content .text-container .button__container .btn{
-	padding: 0.2rem 0.4rem;
+	padding: 1rem 2rem;
 	background:black;
 	border: 2px solid green;
+	color: green;
+	transition: 0.3s ease;
 	
+}
+
+.banner-content .text-container .button__container .btn:hover{
+	border: none;
+	transform: scale(1.2);
 }
 
 @media (max-width: 768px) {
