@@ -1,0 +1,38 @@
+
+.footer {
+    background-color: #333;  
+    color: white;  
+    padding: 20px 0;  
+    text-align: center;
+    position: relative;
+  }
+  
+  .footer-content {
+    max-width: 1200px;  /* Ensure the content doesn't stretch too wide */
+    margin: 0 auto;
+  }
+  
+  .footer p {
+    margin: 0;
+    font-size: 14px;
+  }
+  
+  .social-media-icons {
+    margin-top: 10px;
+  }
+  
+  .social-media-icons a {
+    color: white;
+    font-size: 24px;
+    margin: 0 15px;
+    text-decoration: none;
+  }
+  
+  .social-media-icons a:hover {
+    color: #1e90ff;  
+  }
+  
+  .fab {
+    font-family: 'Font Awesome 5 Brands';  /* Ensure FontAwesome icons work */
+  }
+  

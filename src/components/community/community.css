@@ -1,0 +1,104 @@
+.community__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+    overflow: hidden;
+    font-family: 'Share Tech Mono', 'Cascadia Code', Menlo, Monaco, 'Courier New', monospace;
+}
+.community__container h1{
+    font-weight: bold;
+    font-size: 5rem;
+}
+.community__container {
+	color: green;
+	font-size: 2rem;
+	filter: drop-shadow(0px 0px 5px currentColor);
+  font-family: 'Share Tech Mono', 'Cascadia Code', Menlo, Monaco, 'Courier New', monospace;
+	
+	&::after {
+		content: '';
+		display: inline-block;
+		width: .2em;
+		height: .7em;
+		background-color: currentColor;
+		margin-left: .1em;
+		animation: blink 1s linear infinite forwards;
+		vertical-align: baseline;
+	}
+}
+
+.community__text::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 3px solid #00FF00; /* Green border */
+    border-radius: 15px;
+    animation: moveBorder 3s infinite linear; /* Animate the border */
+    pointer-events: none; /* Prevents the border from interfering with content */
+  }
+  
+  /* Keyframes for moving the green border around the box */
+  @keyframes moveBorder {
+    0% {
+      transform: translateX(0) translateY(0);
+    }
+    25% {
+      transform: translateX(100%) translateY(0);
+    }
+    50% {
+      transform: translateX(100%) translateY(70%);
+    }
+    75% {
+      transform: translateX(0) translateY(70%);
+    }
+    100% {
+      transform: translateX(0) translateY(0);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .community__container {
+        padding: 3rem; /* Reduced padding for tablets */
+    }
+
+    .community__container h1 {
+        font-size: 3rem; /* Reduced font size for heading */
+    }
+
+    .community__container {
+        font-size: 1.5rem; /* Adjusted font size */
+    }
+
+    .community__text {
+        padding: 15px; 
+    }
+}
+
+/* Phone (480px and below) */
+@media (max-width: 480px) {
+    .community__container {
+        margin-top: -6rem;
+        margin-left:6rem;
+        margin-right:6rem;
+        padding: 12rem;
+        word-wrap: break-word; 
+    }
+
+    .community__container h1 {
+        font-size: 2.5rem; 
+    }
+
+    .community__container {
+        font-size: 1.2rem; 
+    }
+
+    .community__text {
+        padding: 10px; 
+    }
+}
+  

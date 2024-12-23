@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+.banner-content{
+	position: relative;
+	top:10rem;
+    margin: 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem
+}
+
+.banner-content .image__container{
+	position: relative;
+	margin-top: 0;
+}
+h1,.banner-content {
+	color: green;
+	font-family: 'Share Tech Mono', 'Cascadia Code', Menlo, Monaco, 'Courier New', monospace;
+	font-size: 2rem;
+	filter: drop-shadow(0px 0px 5px currentColor);
+	
+	&::after {
+		content: '';
+		display: inline-block;
+		width: .2em;
+		height: .7em;
+		background-color: currentColor;
+		margin-left: .1em;
+		animation: blink 1s linear infinite forwards;
+		vertical-align: baseline;
+	}
+}
+
+.grid-container {
+	width: 100vw;
+	margin-top: 0 ;
+	--grid: 10rem;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform-style: preserve-3d;
+	perspective: 100rem;
+	animation: rotate 100s linear infinite forwards;
+	
+	.plane {
+		--dir: 1;
+		width: 300%;
+		height: 150%;
+		min-height: 70rem;
+		position: absolute;
+		bottom: 0;
+		transform-style: preserve-3d;
+		transform-origin: bottom center;
+		transform: translateX(-50%) rotateX(85deg);
+		
+		&:last-child {
+			--dir: -1;
+			top: 0;
+			transform-origin: top center;
+			transform: translateX(-50%) rotateX(-85deg);
+			
+			& > * {
+				&::after {
+					background-image: linear-gradient(to top, rgba(0, 0, 0, 255) var(--grid), rgba(0, 0, 0, 0));
+				}
+			}
+		}
+		
+		& > * {
+			transform-style: preserve-3d;
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			
+			&::before, &::after {
+				content: '';
+				display: block;
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+			}
+
+			&::before {
+				background-image: repeating-linear-gradient(to left, green, green 4px, transparent 4px, transparent var(--grid)), 
+					repeating-linear-gradient(to bottom, green, green 4px, transparent 4px, transparent var(--grid));
+				animation: move 1s linear infinite forwards;
+			}
+
+			&::after {
+				background-image: linear-gradient(to bottom, rgba(0, 0, 0, 255) var(--grid), rgba(0, 0, 0, 0));
+				z-index: 1;
+				transform: translateZ(1px);
+			}
+		}
+		
+		.glow {
+			filter: blur(1rem);
+			z-index: 1;
+			mix-blend-mode: plus-lighter;
+		}
+	}
+}
+
+@keyframes move {
+	from {
+		transform: translateY(0px);
+	}
+	
+	to {
+		transform: translateY(calc(var(--grid) * var(--dir)));
+	}
+}
+
+@keyframes blink {
+	0% {
+		visibility: visible;
+	}
+	
+	50% {
+		visibility: visible;
+	}
+	
+	51% {
+		visibility: hidden;
+	}
+	
+	100% {
+		visibility: hidden;
+	}
+}
+
+.banner-content .text-container .button__container{
+	display: flex;
+	padding: 0.4rem;
+	justify-content: center;
+}
+
+.banner-content .text-container .button__container .btn{
+	padding: 0.2rem 0.4rem;
+	background:black;
+	border: 2px solid green;
+	
+}
+
+@media (max-width: 768px) {
+	.banner-content {
+	  margin-top: 16rem;
+	  grid-template-columns: 1fr;
+	  place-items: center;
+	  width:700px;
+	  font-size: 1rem;
+	}
+
+	h2{
+		font-size: 1rem;
+	}
+	
+	.banner-content .image__container {
+	  display: flex;
+	  justify-content: center;
+	  width: 20rem;
+	}
+  
+	.banner-content .image__container img {
+	  width: 75%;
+	  overflow: hidden;
+	  background-color: bisque !important;
+	}
+	.banner-content .text-container{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		width: 250px;
+		height: 350px;
+		font-size: 2rem;
+		background-color: aliceblue;
+		
+	}
+	.banner-content .text-container .text-wrapper p{
+		border: 2px solid #000; /* Adds a border around the p element */
+  		padding: 10px; /* Adds space inside the border around the text */
+ 	    background-color: #f0f0f0; /* Adds a background color to the box */
+        width: 200px;	
+		word-wrap: break-word;
+	}
+  
+	/* Disable gridlines on smaller screens */
+	.plane > *::before {
+	  background-image: none !important;
+	}
+  
+	/* Alternatively, if you want to remove the entire effect of the grid */
+	.grid-container,
+	.plane,
+	.plane > * {
+	  animation: none !important;
+	  transition: none !important;
+	}
+  
+	/* Remove the glow effect */
+	.glow {
+	  filter: none !important;
+	}
+  }
+  
+  

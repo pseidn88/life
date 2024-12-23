@@ -1,0 +1,21 @@
+/* src/App.css */
+
+.app {
+  position: relative;
+  z-index: 1; /* Keep content above matrix grid */
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 6rem;
+  font-weight: bold;
+  color: green;
+  filter: drop-shadow(0px 0px 10px green);
+  z-index: 10; /* Keep the title above the background */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the title */
+}

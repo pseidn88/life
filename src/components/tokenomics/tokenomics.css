@@ -1,0 +1,147 @@
+/* Tokenomics.css */
+
+.tokenomics-section {
+  margin-top: 25rem;
+  padding: 50px;
+  text-align: center;
+  background-color: black; /* Section background */
+}
+
+.tokenomics-heading {
+  font-size: 3rem;
+  color: #00FF00; /* Green color for the heading */
+  margin-bottom: 20px;
+}
+
+.tokenomics-boxes {
+  display: flex;
+  justify-content: space-between; /* Space between boxes in a row */
+  gap: 20px;
+  flex-wrap: wrap; /* Allow the boxes to wrap when needed */
+}
+
+.tokenomics-box {
+  background-color: rgba(0, 0, 0, 0.7); /* Black background with transparency */
+  color: #00FF00; /* Green text */
+  padding: 20px;
+  border-radius: 15px;
+  width: 250px; /* Box width */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px); /* Glass effect */
+  -webkit-backdrop-filter: blur(10px); /* For Safari */
+  transition: transform 0.3s ease-in-out;
+  opacity: 0; /* Initially invisible for animation */
+  position: relative; /* To position the moving border */
+  overflow: hidden; /* Ensure border stays inside the box */
+}
+
+.tokenomics-box h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.tokenomics-box p {
+  font-size: 1.25rem;
+}
+
+.tokenomics-box:hover {
+  transform: scale(1.05);
+}
+
+/* Animation for the moving border */
+.tokenomics-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 3px solid #00FF00; /* Green border */
+  border-radius: 15px;
+  animation: moveBorder 3s infinite linear; /* Animate the border */
+  pointer-events: none; /* Prevents the border from interfering with content */
+}
+
+/* Keyframes for moving the green border around the box */
+@keyframes moveBorder {
+  0% {
+      transform: translateX(0) translateY(0);
+  }
+  25% {
+      transform: translateX(100%) translateY(0);
+  }
+  50% {
+      transform: translateX(100%) translateY(100%);
+  }
+  75% {
+      transform: translateX(0) translateY(100%);
+  }
+  100% {
+      transform: translateX(0) translateY(0);
+  }
+}
+
+/* Media Queries for Tablet and Phone */
+
+/* Tablet (768px and below) */
+@media (max-width: 768px) {
+  .tokenomics-section {
+      padding: 30px; /* Less padding for tablet */
+      margin-top: 15rem; /* Reduced margin for tablet */
+  }
+
+  .tokenomics-heading {
+      font-size: 2.5rem; /* Adjust font size */
+  }
+
+  .tokenomics-boxes {
+      gap: 10px; /* Reduced gap between boxes */
+      justify-content: center; /* Center boxes on the tablet */
+      flex-direction: column; /* Stack the boxes vertically */
+  }
+
+  .tokenomics-box {
+      width: 100%; /* Make each box take full width of the container */
+      max-width: 300px; /* Limit the maximum width of the boxes */
+  }
+
+  .tokenomics-box h3 {
+      font-size: 1.25rem; /* Smaller heading font size */
+  }
+
+  .tokenomics-box p {
+      font-size: 1.1rem; /* Smaller paragraph font size */
+  }
+}
+
+/* Phone (480px and below) */
+@media (max-width: 480px) {
+  .tokenomics-section {
+      padding: 20px; /* Further reduced padding for phone */
+      margin-top: 10rem; /* Further reduced margin for phone */
+  }
+
+  .tokenomics-heading {
+      font-size: 2rem; /* Adjust font size */
+  }
+
+  .tokenomics-boxes {
+      gap: 10px; /* Reduced gap between boxes */
+      justify-content: center; /* Center boxes on the phone */
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .tokenomics-box {
+      width: 100%; /* Make each box take full width of the container */
+      max-width: 300px; /* Limit the maximum width of the boxes */
+  }
+
+  .tokenomics-box h3 {
+      font-size: 1.1rem; /* Smaller heading font size */
+  }
+
+  .tokenomics-box p {
+      font-size: 1rem; /* Smaller paragraph font size */
+  }
+}
