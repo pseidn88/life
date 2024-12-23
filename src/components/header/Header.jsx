@@ -27,7 +27,9 @@ const Header = () => {
 		<h2>Life is like a meme coin—sometimes it's crazy, but we HODL on</h2>
 		<p>Contract Addres: <span>{contractAddress}</span></p>
 	</div>
-	
+	<div className="button__container">
+		<button className='btn'>Purchase $LIFE</button>
+	</div>
 </div>
 </div>
 
