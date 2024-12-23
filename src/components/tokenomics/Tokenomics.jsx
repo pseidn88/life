@@ -1,13 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import './Tokenomics.css';
+import './tokenomics.css';
 
 const Tokenomics = () => {
   const tokenomicsData = [
     { title: "Total Supply", value: "1,000,000,000" },
-    { title: "Circulating Supply", value: "500,000" },
     { title: "Tax", value: "NO TAX ON BUYING AND SELLING" },
-    { title: "Unclaimed", value: "200,000" },
+    { title: "Unclaimed", value: "0" },
+    { title: "When Lambo?", value: "SOON" },
   ];
 
   return (
