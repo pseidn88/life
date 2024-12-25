@@ -21,7 +21,7 @@ const Header = () => {
 </div>
 <div className = "banner-content">
 <div className="image__container">
-	<img src="../../../public/img/download.png" alt="" width="600px" height="400px"/>
+	<img src="/img/download.png" alt="" width="600px" height="400px"/>
 </div>
 <div className="text-container">
 	<div className="text-wrapper">
