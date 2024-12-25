@@ -6,7 +6,7 @@ const community = () => {
     <div className="community__container">
         <h1>Community</h1>
         <div className="community__text">
-            <p>It's not just about memes, it’s about making Life exciting! Whether you’re here to share your latest $LIFE meme or dive into the future of tokens, our community is where the fun and the gains meet. Let’s ride this wave to the moon together! </p>
+            <p>We're more than just a token — we're a community of crypto enthusiasts, meme lovers, and future $CACA millionaires! Dive into the fun, share the laughs, and be part of the stinky revolution! </p>
             <p>This will keep the tone fun, light, and on-brand for your meme token website while inviting people to engage in the community</p>
         </div>
        
